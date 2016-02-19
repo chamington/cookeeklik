@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<div><p>Cookies:</p><p id="cook">0</p><p>Cookies per second:</p><p id="cps">0</p></div>
+<button id="but">increase speed</button>
+<button id="make">cook</button>
+<script src="jquery.js"></script>
+<script>
+$(document).ready(function() {
+	var cook=0
+	$("#but").click(function(){
+	setInterval(function(){
+		$("#but").onclick=function(){cps=Number(cps)+0.01};
+		$("#make").onclick=function(){cook=Number(cook)+1};
+		delay=1000/Number(cps)
+		$("#cook").text(cook);
+		cook=Number(cook)+1
+		$("#cps").text(cps).delay(delay);
+	},1);
+	});
+});
+</script>
+</body>
+</html>
